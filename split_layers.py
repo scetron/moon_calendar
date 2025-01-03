@@ -2,7 +2,7 @@
 from lxml import etree as ET
 
 # Path to the XML file
-xml_file_path = "design/sam_ally_version/moon_layout.svg"
+xml_file_path = "design/2025_mikey_misha/moon_layout_2025.svg"
 
 # Parse the XML file
 tree = ET.parse(xml_file_path)
@@ -27,5 +27,5 @@ for key, value in root.items():
 for layer in layers:
     new_root.append(layer)
     new_tree = ET.ElementTree(new_root)
-    new_tree.write(f"design/sam_ally_version/{layer.attrib['id']}.svg", pretty_print=True)
+    new_tree.write(f"design/2025_mikey_misha/{layer.attrib['{http://www.inkscape.org/namespaces/inkscape}label']}.svg", pretty_print=True)
     new_root.remove(layer)
